@@ -23,8 +23,7 @@ public class UserController
 
     private final UserService userService;
 
-    public UserController( @Autowired UserService userService )
-    {
+    public UserController(@Autowired UserService userService) {
         this.userService = userService;
     }
 
@@ -32,6 +31,7 @@ public class UserController
     @GetMapping
     public ResponseEntity<List<User>> all()
     {
+
         return ResponseEntity.ok( userService.all() );
     }
 

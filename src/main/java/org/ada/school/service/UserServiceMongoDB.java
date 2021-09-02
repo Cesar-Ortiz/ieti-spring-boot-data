@@ -4,9 +4,12 @@ import org.ada.school.dto.UserDto;
 import org.ada.school.model.User;
 import org.ada.school.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UserServiceMongoDB implements UserService{
 
     private final UserRepository userRepository;
@@ -23,12 +26,14 @@ public class UserServiceMongoDB implements UserService{
 
     @Override
     public User findById(String id) {
-        return null;
+        return userRepository.findById(id).orElse(null);
     }
 
     @Override
     public List<User> all() {
-        return null;
+        List<User> users = new ArrayList<User>();
+        users=userRepository.findAll();
+        return users;
     }
 
     @Override
