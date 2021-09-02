@@ -18,8 +18,7 @@ public class UserServiceMongoDB implements UserService{
 
     @Override
     public User create(User user) {
-        userRepository.save();
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
@@ -34,11 +33,21 @@ public class UserServiceMongoDB implements UserService{
 
     @Override
     public boolean deleteById(String id) {
+        if(userRepository.existsById(id)){
+            userRepository.deleteById(id);
+            return true;
+        }
         return false;
     }
 
     @Override
     public User update(UserDto userDto, String id) {
+        if(userRepository.existsById(id)){
+            User user = userRepository.findById(id).get();
+            user.update(userDto);
+            userRepository.save(user);
+            return user;
+        }
         return null;
     }
 }
