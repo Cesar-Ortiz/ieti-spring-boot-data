@@ -5,9 +5,7 @@ import org.ada.school.dto.UserDto;
 import java.util.Date;
 import java.util.UUID;
 
-public class User
-
-{
+public class User {
 
     String id;
 
