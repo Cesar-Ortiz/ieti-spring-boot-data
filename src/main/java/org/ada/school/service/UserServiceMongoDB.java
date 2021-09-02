@@ -31,9 +31,8 @@ public class UserServiceMongoDB implements UserService{
 
     @Override
     public List<User> all() {
-        List<User> users = new ArrayList<User>();
-        users=userRepository.findAll();
-        return users;
+        System.out.println("entro a servicemongo all");
+        return userRepository.findAll();
     }
 
     @Override

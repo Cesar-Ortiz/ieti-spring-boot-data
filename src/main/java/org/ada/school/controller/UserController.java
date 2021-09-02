@@ -31,7 +31,9 @@ public class UserController
     @GetMapping
     public ResponseEntity<List<User>> all()
     {
-
+        System.out.println("entra all controller ");
+        System.out.println(userService.all());
+        System.out.println("entra all controller 2 ");
         return ResponseEntity.ok( userService.all() );
     }
 
@@ -51,6 +53,7 @@ public class UserController
     @PutMapping( "/{id}" )
     public ResponseEntity<User> update( @RequestBody UserDto userDto, @PathVariable String id )
     {
+        System.out.println("entro controller");
         return ResponseEntity.ok( userService.update( userDto, id ) );
     }
 

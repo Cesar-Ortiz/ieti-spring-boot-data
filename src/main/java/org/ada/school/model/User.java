@@ -36,6 +36,21 @@ public class User {
         return name;
     }
 
+    public String getLastName()
+    {
+        return lastName;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public Date getCreatedAt()
+    {
+        return createdAt;
+    }
+
     public String getId()
     {
         return id;
